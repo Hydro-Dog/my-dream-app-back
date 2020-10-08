@@ -7,3 +7,4 @@ npm run typeorm:migration:run
 Запустить сервер:
 entities: [User, Compan, etc]
 
+Проблема в скрипте pretypeorm, который срабатывает на вызов typeorm-скриптов
