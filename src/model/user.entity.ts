@@ -19,6 +19,9 @@ export class User {
     lastName: string;
 
     @Column()
+    userPic: string;
+
+    @Column()
     phoneNumber: string;
 
     @Column()
