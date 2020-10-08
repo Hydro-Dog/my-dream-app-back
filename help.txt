@@ -1,0 +1,9 @@
+Создать и накатить миграцию:
+
+entities: ['**/*.entity{.ts,.js}'],
+npm run typeorm:migration:generate -- my_init
+npm run typeorm:migration:run
+
+Запустить сервер:
+entities: [User, Compan, etc]
+

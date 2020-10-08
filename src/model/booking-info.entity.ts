@@ -6,6 +6,15 @@ export class BookingInfo {
     id: string;
 
     @Column()
+    companyId: string;
+
+    @Column()
+    companySpaceId: string;
+
+    @Column()
+    roomId: string;
+
+    @Column()
     guestName: string;
 
     @Column()

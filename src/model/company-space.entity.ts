@@ -2,9 +2,12 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity()
-export class CompanySpaceInterface {
+export class CompanySpace {
     @PrimaryGeneratedColumn('uuid')
     id: string;
+
+    @Column()
+    companyId: string
 
     @Column()
     roomsIds: string

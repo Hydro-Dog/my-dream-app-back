@@ -1,7 +1,22 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { BookingInfo } from 'src/model/booking-info.entity';
+import { CompanySpace } from 'src/model/company-space.entity';
+import { Company } from 'src/model/company.entity';
+import { Room } from 'src/model/room.entity';
+import { Table } from 'src/model/table.entity';
+import { User } from 'src/model/user.entity';
 
 require('dotenv').config();
+
+const entities = [
+  User,
+  Table,
+  Room,
+  Company,
+  CompanySpace,
+  BookingInfo,
+]
 
 class ConfigService {
   constructor(private env: { [k: string]: string | undefined }) {}
@@ -42,7 +57,9 @@ class ConfigService {
       password: this.getValue('POSTGRES_PASSWORD'),
       database: this.getValue('POSTGRES_DATABASE'),
 
-      entities: ['**/*.entity{.ts,.js}'],
+      entities,
+      // entities: ['**/*.entity{.ts,.js}'],
+      // entities: ['dist/**/*.entity.js'],
 
       migrationsTableName: 'migration',
 

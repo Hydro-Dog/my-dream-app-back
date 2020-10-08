@@ -28,6 +28,12 @@ export class User {
     email: string;
 
     @Column()
+    password: string;
+
+    @Column()
+    secret: string;
+
+    @Column()
     innNumber: string;
 
     @Column()
@@ -35,6 +41,9 @@ export class User {
 
     @Column()
     friendsIds: string;
+
+    @Column()
+    friendsRequestsIds: string;
 
     @Column()
     isActive: boolean;

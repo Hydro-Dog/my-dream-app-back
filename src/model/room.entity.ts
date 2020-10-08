@@ -7,10 +7,16 @@ export class Room {
     id: string;
 
     @Column()
-    indexNumber: string;
+    companyId: string;
+
+    @Column()
+    companySpaceId: string;
 
     @Column()
     tablesIds: string;
+
+    @Column()
+    indexNumber: string;
 
     @Column()
     roomTitle: string;
