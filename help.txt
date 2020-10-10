@@ -8,3 +8,6 @@ npm run typeorm:migration:run
 entities: [User, Compan, etc]
 
 Проблема в скрипте pretypeorm, который срабатывает на вызов typeorm-скриптов
+
+
+Решение: Удалять миграции при запуске start:dev
