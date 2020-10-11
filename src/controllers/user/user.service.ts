@@ -2,22 +2,32 @@
 /* eslint-disable no-undef */
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { User } from 'src/model/user.entity';
+import { CreateUserDto } from 'src/dto/user.dto';
+import { UserEntity } from 'src/model/user.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
 export class UserService {
-  constructor(@InjectRepository(User) private readonly userRepo: Repository<User>) {}
+    private readonly users: UserEntity[] = [];
 
-  async findAll(): Promise<User[]> {
-    return await this.userRepo.find();
-  }
 
-  async findOne(id: string): Promise<User> {
-    return await this.userRepo.findOne(id);
-  }
+    constructor(@InjectRepository(UserEntity) private readonly userRepo: Repository<UserEntity>) {}
 
-  async remove(id: string): Promise<void> {
-    await this.userRepo.delete(id);
-  }
+    create(user: CreateUserDto): UserEntity {
+        this.users.push(user);
+
+        return user;
+    }
+
+    async findAll(): Promise<UserEntity[]> {
+        return await this.userRepo.find();
+    }
+
+    async findOne(id: string): Promise<UserEntity> {
+        return await this.userRepo.findOne(id);
+    }
+
+    async remove(id: string): Promise<void> {
+        await this.userRepo.delete(id);
+    }
 }

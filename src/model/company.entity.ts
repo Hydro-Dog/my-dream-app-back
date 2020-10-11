@@ -2,7 +2,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity()
-export class Company {
+export class CompanyEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
@@ -23,6 +23,9 @@ export class Company {
 
     @Column()
     rating: string;
+
+    @Column()
+    isActive: boolean;
 
     @Column()
     feedback: string;
