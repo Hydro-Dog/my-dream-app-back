@@ -1,25 +1,25 @@
 /* eslint-disable no-return-await */
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateCompanyDto } from 'src/dto/company.dto';
-import { CompanyEntity } from 'src/model/company.entity';
+import { Company } from 'src/model/company.entity';
 import { Repository } from 'typeorm';
 
 export class CompanyService {
-    private readonly comanies: CompanyEntity[] = [];
+    private readonly comanies: Company[] = [];
 
-    constructor(@InjectRepository(CompanyEntity) private readonly companyRepo: Repository<CompanyEntity>) {}
+    constructor(@InjectRepository(Company) private readonly companyRepo: Repository<Company>) {}
 
-    create(company: CreateCompanyDto): CompanyEntity {
+    create(company: CreateCompanyDto): Company {
         this.comanies.push(company);
 
         return company;
     }
 
-    async findAll(): Promise<CompanyEntity[]> {
+    async findAll(): Promise<Company[]> {
         return await this.companyRepo.find();
     }
 
-    async findOne(id: string): Promise<CompanyEntity> {
+    async findOne(id: string): Promise<Company> {
         return await this.companyRepo.findOne(id);
     }
 

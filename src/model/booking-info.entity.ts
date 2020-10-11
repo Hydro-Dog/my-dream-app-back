@@ -1,6 +1,7 @@
 /* eslint-disable no-magic-numbers */
-import { Column, CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
+@Entity()
 export class BookingInfo {
     @PrimaryGeneratedColumn('uuid')
     id: string;
@@ -28,6 +29,9 @@ export class BookingInfo {
 
     @Column()
     personsQuantity: number;
+
+    @Column()
+    comment: string;
 
     @CreateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
     createdDateTime: Date;

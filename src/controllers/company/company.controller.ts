@@ -7,7 +7,7 @@ import { Post } from '@nestjs/common/decorators/http/request-mapping.decorator';
 import { ApiOperation } from '@nestjs/swagger';
 import { Request } from 'express';
 import { CreateCompanyDto } from 'src/dto/company.dto';
-import { CompanyEntity } from 'src/model/company.entity';
+import { Company } from 'src/model/company.entity';
 import { CompanyService } from './company.service';
 
 @Controller('company')
@@ -15,13 +15,13 @@ export class CompanyController {
     constructor(private companyService: CompanyService) {}
 
     @Get()
-    public async findAll(@Req() req: Request): Promise<CompanyEntity[]> {
+    public async findAll(@Req() req: Request): Promise<Company[]> {
         return await this.companyService.findAll();
     }
 
     @Post()
     @ApiOperation({ summary: 'Create company' })
-    async create(@Body() createCompanyDto: CreateCompanyDto): Promise<CompanyEntity> {
+    async create(@Body() createCompanyDto: CreateCompanyDto): Promise<Company> {
         return this.companyService.create(createCompanyDto);
     }
 }

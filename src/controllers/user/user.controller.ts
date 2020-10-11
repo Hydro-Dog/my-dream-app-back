@@ -7,7 +7,7 @@ import { Controller, Get, Post, Body } from '@nestjs/common';
 import { Req } from '@nestjs/common/decorators/http/route-params.decorator';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Request } from 'express';
-import { UserEntity } from 'src/model/user.entity';
+import { User } from 'src/model/user.entity';
 import { CreateUserDto } from '../../dto/user.dto';
 import { UserService } from './user.service';
 
@@ -16,13 +16,13 @@ export class UserController {
     constructor(private userService: UserService) {}
 
     @Get()
-    public async findAll(@Req() req: Request): Promise<UserEntity[]> {
+    public async findAll(@Req() req: Request): Promise<User[]> {
         return await this.userService.findAll();
     }
 
     @Post()
     @ApiOperation({ summary: 'Create user' })
-    async create(@Body() createUserDto: CreateUserDto): Promise<UserEntity> {
+    async create(@Body() createUserDto: CreateUserDto): Promise<User> {
         return this.userService.create(createUserDto);
     }
 }

@@ -2,18 +2,18 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { BookingInfo } from 'src/model/booking-info.entity';
 import { CompanySpace } from 'src/model/company-space.entity';
-import { CompanyEntity } from 'src/model/company.entity';
+import { Company } from 'src/model/company.entity';
 import { Room } from 'src/model/room.entity';
 import { Table } from 'src/model/table.entity';
-import { UserEntity } from 'src/model/user.entity';
+import { User } from 'src/model/user.entity';
 
 require('dotenv').config();
 
 const entities = [
-    UserEntity,
+    User,
     Table,
     Room,
-    CompanyEntity,
+    Company,
     CompanySpace,
     BookingInfo,
 ];
