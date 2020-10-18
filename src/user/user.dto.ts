@@ -63,20 +63,4 @@ export class CreateUserDto implements Readonly<CreateUserDto> {
     @ApiProperty({ required: true })
     @IsBoolean()
     isActive: boolean;
-
-    @ApiProperty({ required: true })
-    @IsString()
-    createdDateTime: Date;
-
-    @ApiProperty({ required: true })
-    @IsString()
-    createdBy: string;
-
-    @ApiProperty({ required: true })
-    @IsString()
-    lastChangedDateTime: Date;
-
-    @ApiProperty({ required: true })
-    @IsString()
-    lastChangedBy: string;
 }

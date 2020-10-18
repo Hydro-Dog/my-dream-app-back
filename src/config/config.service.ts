@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { BookingInfo } from 'src/model/booking-info.entity';
-import { CompanySpace } from 'src/model/company-space.entity';
-import { Company } from 'src/model/company.entity';
-import { Room } from 'src/model/room.entity';
-import { Table } from 'src/model/table.entity';
-import { User } from 'src/model/user.entity';
+import { BookingInfo } from 'db/entities/booking-info.entity';
+import { CompanySpace } from 'db/entities/company-space.entity';
+import { Company } from 'db/entities/company.entity';
+import { Room } from 'db/entities/room.entity';
+import { User } from 'db/entities/user.entity';
+import { Table } from 'typeorm';
 
 require('dotenv').config();
 
@@ -61,11 +61,11 @@ class ConfigService {
             // entities: ['**/*.entity{.ts,.js}'],
             // entities: ['dist/**/*.entity.js'],
 
-            migrationsTableName: 'migration',
+            // migrationsTableName: 'migration',
 
-            migrations: ['src/migration/*.ts'],
+            // migrations: ['src/migration/*.ts'],
 
-            cli: { migrationsDir: 'src/migration' },
+            // cli: { migrationsDir: 'src/migration' },
 
             ssl: this.isProduction(),
         };

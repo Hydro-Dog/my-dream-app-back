@@ -6,8 +6,8 @@ import { Body, Controller, Get, Req } from '@nestjs/common';
 import { Post } from '@nestjs/common/decorators/http/request-mapping.decorator';
 import { ApiOperation } from '@nestjs/swagger';
 import { Request } from 'express';
-import { CreateCompanyDto } from 'src/dto/company.dto';
-import { Company } from 'src/model/company.entity';
+import { CreateCompanyDto } from 'src/company/company.dto';
+import { Company } from 'db/entities/company.entity';
 import { CompanyService } from './company.service';
 
 @Controller('company')

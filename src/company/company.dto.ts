@@ -1,5 +1,5 @@
-import { ApiProperty } from "@nestjs/swagger";
-import { IsBoolean, IsString, IsUUID } from "class-validator";
+import { ApiProperty } from '@nestjs/swagger';
+import { IsBoolean, IsString, IsUUID } from 'class-validator';
 
 export class CreateCompanyDto implements Readonly<CreateCompanyDto> {
     @ApiProperty({ required: true })
@@ -41,22 +41,6 @@ export class CreateCompanyDto implements Readonly<CreateCompanyDto> {
     @ApiProperty({ required: true })
     @IsString()
     barFriendsIds: string;
-
-    @ApiProperty({ required: true })
-    @IsString()
-    createdDateTime: Date;
-
-    @ApiProperty({ required: true })
-    @IsString()
-    createdBy: string;
-
-    @ApiProperty({ required: true })
-    @IsString()
-    lastChangedDateTime: Date;
-
-    @ApiProperty({ required: true })
-    @IsString()
-    lastChangedBy: string;
 
     @ApiProperty({ required: true })
     @IsBoolean()

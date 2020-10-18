@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-class-members */
 /* eslint-disable require-await */
 /* eslint-disable no-magic-numbers */
 /* eslint-disable no-unused-vars */
@@ -7,8 +8,8 @@ import { Controller, Get, Post, Body } from '@nestjs/common';
 import { Req } from '@nestjs/common/decorators/http/route-params.decorator';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Request } from 'express';
-import { User } from 'src/model/user.entity';
-import { CreateUserDto } from '../../dto/user.dto';
+import { User } from 'db/entities/user.entity';
+import { CreateUserDto } from './user.dto';
 import { UserService } from './user.service';
 
 @Controller('user')

@@ -1,7 +1,7 @@
 /* eslint-disable no-return-await */
 import { InjectRepository } from '@nestjs/typeorm';
-import { CreateCompanyDto } from 'src/dto/company.dto';
-import { Company } from 'src/model/company.entity';
+import { CreateCompanyDto } from 'src/company/company.dto';
+import { Company } from 'db/entities/company.entity';
 import { Repository } from 'typeorm';
 
 export class CompanyService {

@@ -35,16 +35,4 @@ export class Table {
 
     @Column()
     bookingsIds: string;
-
-    @CreateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
-    createdDateTime: Date;
-
-    @Column({ type: 'varchar', length: 300 })
-    createdBy: string;
-
-    @CreateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
-    lastChangedDateTime: Date;
-
-    @Column({ type: 'varchar', length: 300 })
-    lastChangedBy: string;
 }

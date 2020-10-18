@@ -2,8 +2,8 @@
 /* eslint-disable no-undef */
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CreateUserDto } from 'src/dto/user.dto';
-import { User } from 'src/model/user.entity';
+import { CreateUserDto } from 'src/user/user.dto';
+import { User } from 'db/entities/user.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
